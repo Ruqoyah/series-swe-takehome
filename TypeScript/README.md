@@ -49,3 +49,5 @@ npm run test:mocha
 - [x] Write/Update tests for update item quality feature.
 - [x] Refactor updateQuality method so it can be more clean, reusable and easy to add new features in future.
     - Create a separate class called ItemQualityManagement, then make GildedRose extend the class.
+- [x] Refactor code to use class abstraction to reduce complexity.
+- [ ] Improve test converage.

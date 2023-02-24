@@ -1,4 +1,3 @@
-import {ItemQualityManagement} from './item-quality-management';
 export class Item {
   name: string;
   sellIn: number;
@@ -11,16 +10,19 @@ export class Item {
   }
 }
 
+export abstract class AbstractItem extends Item {
+  abstract updateQuality(): void;
+}
+
 /**
  * @class GildedRose
  * @param  {Array} items 
  * @classdesc gilded rose component
  */
-export class GildedRose extends ItemQualityManagement {
-  items: Array<Item>;
+export class GildedRose {
+  items: Array<AbstractItem>;
 
-  constructor(items = [] as Array<Item>) {
-    super();
+  constructor(items: Array<AbstractItem>) {
     this.items = items;
   }
 
@@ -30,9 +32,7 @@ export class GildedRose extends ItemQualityManagement {
    * @return updated items
    */
   updateQuality() {
-    for (let i = 0; i < this.items.length; i++) {
-      this.updateItemQuality(this.items[i]);
-    }
+    this.items.forEach(item => item.updateQuality());
     return this.items;
   }
 }
