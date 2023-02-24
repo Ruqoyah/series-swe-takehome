@@ -46,6 +46,6 @@ npm run test:mocha
 
 ### Tasks
 - [x] Update README
-- [ ] Write/Update tests for update item quality feature.
+- [x] Write/Update tests for update item quality feature.
 - [ ] Refactor updateQuality method so it can be more clean, reusable and easy to add new features in future.
     - Create a separate class called ItemQualityManagement, then make GildedRose extend the class.
